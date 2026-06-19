@@ -17,8 +17,9 @@ const friendRoutes = require('./routes/friends');
 const boardRoutes = require('./routes/boards');
 
 const app = express();
-// Trust Render's reverse proxy
-app.set('trust proxy', 1);
+app.set('trust proxy', true);
+
+console.log('Trust Proxy Value:', app.get('trust proxy'));
 const server = http.createServer(app);
 
 // Socket.io setup
